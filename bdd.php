@@ -1,18 +1,24 @@
 <?php
-function connexion() {
-    $host = '127.0.0.1';  // or 'localhost'
-    $dbname = 'artbox';    // the database you created
-    $username = 'root';    // default XAMPP user
-    $password = '';        // default XAMPP password is empty
+// bdd.php
+require_once 'config.php'; // include the constants
 
+function connexion() {
     try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        // set error mode to exception for easier debugging
+        $pdo = new PDO(
+            sprintf(
+                'mysql:host=%s;dbname=%s;port=%s;charset=utf8mb4',
+                MYSQL_HOST,
+                MYSQL_NAME,
+                MYSQL_PORT
+            ),
+            MYSQL_USER,
+            MYSQL_PASSWORD
+        );
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     } catch (PDOException $e) {
-        // stop script and display error if connection fails
-        die("Erreur de connexion à la base de données : " . $e->getMessage());
+        die("Erreur de connexion : " . $e->getMessage());
     }
 }
+
 ?>
