@@ -12,6 +12,22 @@ if (
     // Si un champ est invalide, on redirige vers le formulaire
     header('Location: ajouter.php');
 } else {
-    // Tous les champs sont valides → on pourra insérer en base
+
+ // Tous les champs sont valides → insertion en base
+    $titre = htmlspecialchars($_POST['titre']);
+    $artiste = htmlspecialchars($_POST['artiste']);
+    $description = htmlspecialchars($_POST['description']);
+    $image = htmlspecialchars($_POST['image']);
+
+    //Insertion en BDD
+    require 'bdd.php';
+    $bdd = connexion();
+
+    $requete = $bdd->prepare('INSERT INTO oeuvres (titre, description, artiste, image) VALUES (?, ?, ?, ?)');
+    $requete->execute([$titre, $description, $artiste, $image]);
+
+    // Redirection après insertion
+    header('Location: oeuvre.php?id=' . $bdd->lastInsertId());
+    
 }
 ?>
