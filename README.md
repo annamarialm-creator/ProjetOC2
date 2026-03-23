@@ -1,13 +1,32 @@
-# The ArtBox
+# ArtBox – Application Web PHP
 
-Ce projet contient : 
-* Le code initial du projet The ArtBox pour réaliser le projet 4 du parcours PHP/Symfony sur la branche `main`.
-* Les corrections des différentes étapes sur les branches `correction-etapeX` (avec X le numéro de l'étape).
+## Description
+ArtBox est une application web dynamique développée en PHP permettant d’afficher et de consulter des œuvres stockées en base de données.
 
-## Installation du projet
+Ce projet met en œuvre le passage d’un site statique à une application dynamique grâce à la logique côté serveur et à l’utilisation d’une base de données.
 
-Pour installer ce projet : 
-1. Télécharger le projet en cliquant sur le bouton "Code" ci-dessus puis "Download ZIP".
-2. Dézipper le projet et placez-le dans le dossier contenant vos projets PHP habituels.
-3. Ouvrir le projet dans le navigateur via l'adresse http://localhost/NOM_DU_DOSSIER (ou autre selon votre configuration)
-4. Ouvrir le projet dans votre IDE (exemple : VSCode) pour réaliser les prochaines étapes.
+## Fonctionnalités
+- Affichage d’une liste d’œuvres depuis la base de données  
+- Consultation du détail d’une œuvre  
+- Ajout d’œuvres via un formulaire  
+- Traitement des données côté serveur en PHP  
+
+## Technologies
+- PHP (procédural)  
+- MySQL (via PDO)  
+- HTML / CSS  
+
+## Compétences acquises
+- Connexion à une base de données avec PDO  
+- Gestion des formulaires et des entrées utilisateur  
+- Structuration d’une application web dynamique  
+- Mise en place des bases du CRUD (Create, Read)  
+
+## Installation
+1. Cloner le dépôt  
+2. Configurer un serveur local (ex : XAMPP)  
+3. Configurer la base de données (voir `config.php` / `bdd.php`)  
+4. Lancer le projet via `http://localhost/...`  
+
+## Notes
+Projet réalisé dans le cadre de ma formation en développement web, centré sur les fondamentaux backend.
